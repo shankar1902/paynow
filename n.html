@@ -1,0 +1,102 @@
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
+</head>
+<body>
+<script src="js/pay.js"></script>
+<div class="container-fluid py-3 ">
+<div class="row">
+<div class="col-12 col-sm-8 col-md-6 col-lg-4 mx-auto ">
+<div id="pay-invoice" class="card">
+<div class="card-body" >
+<div class="card-title">
+<h3 class="text-center">Payment Details</h3>
+</div>
+<hr>
+<div class="paynow_error"></div>
+<form action="pay/in.html" name="pay" onsubmit="return PayNowvalid()">
+<div class="form-group text-center">
+<ul class="list-inline">
+<li class="list-inline-item"><i class="text-primary fab fa-cc-visa 2x"style="font-size:50px"></i></li>
+<li class="list-inline-item"><i class="text-primary fab fa-cc-mastercard 2x" style="font-size:50px"></i></li>
+<li class="list-inline-item"><i class="text-primary  fab fa-cc-amex 2x" style="font-size:50px"></i></li>
+<li class="list-inline-item"><i class="text-primary  fab fa-cc-discover 2x" style="font-size:50px"></i></li>
+</ul>
+</div>
+<div class="form-group">
+<label for="payment" class="control-label mb-1">Payment amount</label>
+<input type="text" name="payment"  class="form-control" required autocomplete="off">
+</div>
+<div class="form-group has-success">
+<label for="name" class="control-label mb-1">Name on card Holder</label>
+<input type="text" name="name"  class="form-control" required autocomplete="off">
+</div>                                                                   
+<div class="form-group">
+<label for="number" class="control-label mb-1">Card number</label>
+<input type="tel" name="number"  class="form-control" maxlength="16" inputmode="numeric" pattern="\d*" required="">
+</div>
+<div class="row">
+<div class="col-6">
+<div class="form-group">
+<label for="exp" class="control-label mb-1">Expiration</label>
+<input type="tel"  name="exp" maxlength="2" class="form-control"  required  placeholder="MM" /> 
+<input type="tel"  name="exp" maxlength="2" class="form-control"  required  placeholder="YY" /> 
+</div>
+</div>
+<div class="col-6">
+<label for="code" class="control-label mb-1">CVV Code</label>
+<div class="input-group">
+<input type="password" name="code"  maxlength="3"  id="myInput" class="form-control" required  autocomplete="off"> 
+<div class="input-group-append">
+<div class="input-group-text">
+<input type="checkbox" onclick="myFunction()">
+</div>
+</div>
+</div>
+
+<button onclick="document.getElementById('id01').style.display='block'" class="w3-button w3-black">Where is CVV Code ?</button>
+<div id="id01" class="w3-modal">
+<div class="w3-modal-content w3-card-4">
+<header class="w3-container w3-teal"> 
+<span onclick="document.getElementById('id01').style.display='none'" 
+class="w3-button w3-display-topright">&times;</span>
+</header>
+<div class="w3-container">
+<p>It’s a 3- or 4- digit code usually found on the front or back of your card.</p>
+</div>
+          
+</div>
+</div>
+
+</div>
+</div>
+<div class="form-group">
+<label for="zip" class="control-label mb-1">Postal code</label>
+<input type="text" name="zip" class="form-control" maxlength="6" required value="" data-val="true" data-val-required="Please enter the ZIP/Postal code" autocomplete="postal-code">
+<span class="help-block" data-valmsg-for="x_zip" data-valmsg-replace="true"></span>
+</div>
+<button id="payment-button" type="submit"  class="btn btn-lg btn-primary btn-block">
+<i class="fa fa-lock fa-lg"></i>&nbsp;
+<span id="payment-button-amount">Pay Now</span>
+<span id="payment-button-sending" style="display:none">Sending…</span>
+</button>
+</form>
+</div>
+</div>
+</div>
+<script src="js/now.js"></script>
+<script>
+function myFunction() {
+var x = document.getElementById("myInput");
+if (x.type === "password") {
+x.type = "text";
+} else {
+x.type = "password";
+}
+}
+</script>
+</body>
+</html>

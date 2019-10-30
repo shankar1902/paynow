@@ -1,0 +1,29 @@
+<html>
+    <head>
+        <link href="css/style.css" rel="stylesheet">
+    </head>
+<body onload="myFunction()" style="margin:0;">
+        <div id="loader"></div>
+
+        <div style="display:none;" id="content" class="animate-bottom">
+<div class="pes">
+<img src="img/1.png" width:"50%" style="margin-left: 20px;">
+</div>
+<div class="des">
+<a href="file:///E:/now/n.html" style="margin-left: 40px;color: crimson;font-size: 20px"><strong>Click Here</strong></a> go to the Home Page
+</div>
+</div>
+<script>
+        var myVar;
+        
+        function myFunction() {
+          myVar = setTimeout(showPage, 3000);
+        }
+        
+        function showPage() {
+          document.getElementById("loader").style.display = "none";
+          document.getElementById("content").style.display = "block";
+        }
+        </script>
+</body>
+</html>
